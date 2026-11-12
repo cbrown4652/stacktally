@@ -1,0 +1,38 @@
+[project]
+name = "stacktally"
+version = "0.1.1"
+description = "Service catalog and drift detection for Docker Compose"
+readme = "README.md"
+authors = [
+    { name = "chris", email = "17256809+cbrown4652@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.27.3",
+]
+
+[project.scripts]
+stacktally = "stacktally.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E", "W",  # pycodestyle: basic style errors
+    "F",       # pyflakes: unused imports/variables, undefined names
+    "I",       # isort: import ordering
+    "B",       # bugbear: common bug patterns
+    "UP",      # pyupgrade: use modern Python syntax
+]
+
