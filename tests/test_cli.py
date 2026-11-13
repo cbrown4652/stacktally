@@ -1,6 +1,7 @@
 from typer.testing import CliRunner
 
-from stacktally.cli import __version__, app
+from stacktally import __version__
+from stacktally.cli import app
 
 runner = CliRunner()
 
